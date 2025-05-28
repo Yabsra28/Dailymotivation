@@ -1,0 +1,324 @@
+2025-05-28 11:28:06,027 - INFO - Initialized session_id: 308f22b27a6140b4bdc55bb2dca870f5
+2025-05-28 11:28:06,031 - INFO - Awaiting Basecamp authentication
+2025-05-28 11:28:07,842 - DEBUG - Token file not found or invalid
+2025-05-28 11:28:07,850 - INFO - Initiating OAuth flow
+2025-05-28 11:28:11,241 - DEBUG - Starting new HTTPS connection (1): launchpad.37signals.com:443
+2025-05-28 11:28:11,608 - DEBUG - https://launchpad.37signals.com:443 "POST /authorization/token.json HTTP/11" 200 None
+2025-05-28 11:28:11,613 - INFO - Access token saved successfully
+2025-05-28 11:28:11,623 - DEBUG - Starting new HTTPS connection (1): launchpad.37signals.com:443
+2025-05-28 11:28:11,940 - DEBUG - https://launchpad.37signals.com:443 "GET /authorization.json HTTP/11" 200 None
+2025-05-28 11:28:11,945 - INFO - Authentication successful
+2025-05-28 11:28:11,951 - DEBUG - Starting new HTTPS connection (1): 3.basecampapi.com:443
+2025-05-28 11:28:12,739 - DEBUG - https://3.basecampapi.com:443 "GET /3974505/projects.json HTTP/11" 200 2240
+2025-05-28 11:28:12,741 - INFO - Fetched 3 projects for account_id 3974505
+2025-05-28 11:28:12,748 - DEBUG - Selected project: Test, ID: 42454826
+2025-05-28 11:28:12,749 - DEBUG - Fetching people from: https://3.basecampapi.com/3974505/projects/42454826/people.json with account_id=3974505, project_id=42454826
+2025-05-28 11:28:12,754 - DEBUG - Starting new HTTPS connection (1): 3.basecampapi.com:443
+2025-05-28 11:28:13,466 - DEBUG - https://3.basecampapi.com:443 "GET /3974505/projects/42454826/people.json HTTP/11" 200 2175
+2025-05-28 11:28:13,470 - DEBUG - Starting new HTTPS connection (1): 3.basecampapi.com:443
+2025-05-28 11:28:13,979 - DEBUG - https://3.basecampapi.com:443 "GET /3974505/projects/42454826/people.json HTTP/11" 200 2175
+2025-05-28 11:28:13,981 - INFO - Raw people API response for project 42454826: [
+  {
+    "id": 46444393,
+    "attachable_sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDY0NDQzOTM_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--d233c20586685717b001f8d7e73c5d4e7db63237",
+    "name": "Raey Abebe",
+    "email_address": "raey.abebe@ienetworksolutions.com",
+    "personable_type": "User",
+    "title": "AI Researcher",
+    "bio": "",
+    "location": "CI-Research & Development ",
+    "created_at": "2024-07-29T14:44:45.827Z",
+    "updated_at": "2025-05-22T07:06:47.567Z",
+    "admin": false,
+    "owner": false,
+    "client": false,
+    "employee": true,
+    "time_zone": "America/Los_Angeles",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBGmvxAI=--fadd023ab52c4e2375bb102b6b8c3ba499210035/avatar?v=1",
+    "company": {
+      "id": 1256972,
+      "name": "IE Network Solutions"
+    },
+    "can_ping": true,
+    "can_manage_projects": true,
+    "can_manage_people": true,
+    "can_access_timesheet": false,
+    "can_access_hill_charts": true
+  },
+  {
+    "id": 47810465,
+    "attachable_sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0NjU_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--3b00d03392430efc92d0b91039471a689e176faa",
+    "name": "Muluken Ashenafi",
+    "email_address": "mulukenashenafi84@outlook.com",
+    "personable_type": "User",
+    "title": "AI GTP",
+    "bio": null,
+    "location": null,
+    "created_at": "2025-02-28T12:10:06.770Z",
+    "updated_at": "2025-05-16T22:11:29.304Z",
+    "admin": false,
+    "owner": false,
+    "client": false,
+    "employee": true,
+    "time_zone": "Europe/Moscow",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKGH2QI=--af1227dd34f888c17c238d9df169173d6d097c78/avatar?v=1",
+    "company": {
+      "id": 1256972,
+      "name": "IE Network Solutions"
+    },
+    "can_ping": true,
+    "can_manage_projects": true,
+    "can_manage_people": true,
+    "can_access_timesheet": false,
+    "can_access_hill_charts": true
+  },
+  {
+    "id": 47810466,
+    "attachable_sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0NjY_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--252c4273143684657ef42d5bfb202b6ca67e5c53",
+    "name": "Telaynew Ambachew",
+    "email_address": "telaynew11@outlook.com",
+    "personable_type": "User",
+    "title": "AI GTP",
+    "bio": null,
+    "location": null,
+    "created_at": "2025-02-28T12:10:07.327Z",
+    "updated_at": "2025-05-19T09:28:31.024Z",
+    "admin": false,
+    "owner": false,
+    "client": false,
+    "employee": true,
+    "time_zone": "Europe/Moscow",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKKH2QI=--ee0e586921d0035a4a09771031f85541bb08eeee/avatar?v=1",
+    "company": {
+      "id": 1256972,
+      "name": "IE Network Solutions"
+    },
+    "can_ping": true,
+    "can_manage_projects": true,
+    "can_manage_people": true,
+    "can_access_timesheet": false,
+    "can_access_hill_charts": true
+  },
+  {
+    "id": 47810467,
+    "attachable_sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0Njc_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--cce8e9c1429e36cb64c2b5349ac55499409e8e72",
+    "name": "Yabsra Fekadu",
+    "email_address": "yabsrafekadu28@outlook.com",
+    "personable_type": "User",
+    "title": "AI GTP",
+    "bio": "",
+    "location": "",
+    "created_at": "2025-02-28T12:10:07.946Z",
+    "updated_at": "2025-05-23T07:28:33.264Z",
+    "admin": false,
+    "owner": false,
+    "client": false,
+    "employee": true,
+    "time_zone": "Europe/Moscow",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKOH2QI=--83caa7ef6ce3431cff3f975adc5b982ed4964f25/avatar?v=1",
+    "company": {
+      "id": 1256972,
+      "name": "IE Network Solutions"
+    },
+    "can_ping": true,
+    "can_manage_projects": true,
+    "can_manage_people": true,
+    "can_access_timesheet": false,
+    "can_access_hill_charts": true
+  },
+  {
+    "id": 47810468,
+    "attachable_sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0Njg_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--effc4b04822fb095b9675573e2bbde503a0569e1",
+    "name": "Kidus Girma",
+    "email_address": "kidugirma19@outlook.com",
+    "personable_type": "User",
+    "title": "AI GTP",
+    "bio": null,
+    "location": null,
+    "created_at": "2025-02-28T12:10:08.553Z",
+    "updated_at": "2025-05-17T17:03:08.269Z",
+    "admin": false,
+    "owner": false,
+    "client": false,
+    "employee": true,
+    "time_zone": "Europe/Athens",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKSH2QI=--809133130b2c85e5377b3a7ecdd79879c4aeb0a5/avatar?v=1",
+    "company": {
+      "id": 1256972,
+      "name": "IE Network Solutions"
+    },
+    "can_ping": true,
+    "can_manage_projects": true,
+    "can_manage_people": true,
+    "can_access_timesheet": false,
+    "can_access_hill_charts": true
+  },
+  {
+    "id": 47846157,
+    "attachable_sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4NDYxNTc_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--7444c77233840fe631ba467a47725d81fd887fe6",
+    "name": "Teklemariam Shewamnil",
+    "email_address": "teklemariamshewamnil@gmail.com",
+    "personable_type": "User",
+    "title": "AI GTP",
+    "bio": "",
+    "location": "",
+    "created_at": "2025-03-05T07:29:01.690Z",
+    "updated_at": "2025-03-31T08:28:16.612Z",
+    "admin": false,
+    "owner": false,
+    "client": false,
+    "employee": true,
+    "time_zone": "Europe/Moscow",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBA0T2gI=--994ffed4e8421bb964f183cabfc86b1fe35b6f03/avatar?v=1",
+    "company": {
+      "id": 1256972,
+      "name": "IE Network Solutions"
+    },
+    "can_ping": true,
+    "can_manage_projects": true,
+    "can_manage_people": true,
+    "can_access_timesheet": false,
+    "can_access_hill_charts": true
+  },
+  {
+    "id": 47846158,
+    "attachable_sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4NDYxNTg_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--b16a79079bf43abd32f4324c3b7f17cbd95855da",
+    "name": "Mikias Abate",
+    "email_address": "mikias.abate12@outlook.com",
+    "personable_type": "User",
+    "title": "AI GTP",
+    "bio": "",
+    "location": "",
+    "created_at": "2025-03-05T07:30:02.193Z",
+    "updated_at": "2025-05-22T08:39:46.415Z",
+    "admin": false,
+    "owner": false,
+    "client": false,
+    "employee": true,
+    "time_zone": "Europe/Moscow",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBA4T2gI=--511469279a6fd9010073b6aaded31a5051980d98/avatar?v=1",
+    "company": {
+      "id": 1256972,
+      "name": "IE Network Solutions"
+    },
+    "can_ping": true,
+    "can_manage_projects": true,
+    "can_manage_people": true,
+    "can_access_timesheet": false,
+    "can_access_hill_charts": true
+  }
+]
+2025-05-28 11:28:13,994 - INFO - Processing person: ID=46444393, Name=Raey Abebe, Email=raey.abebe@ienetworksolutions.com, SGID=BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDY0NDQzOTM_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--d233c20586685717b001f8d7e73c5d4e7db63237, Data={'id': 46444393, 'attachable_sgid': 'BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDY0NDQzOTM_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--d233c20586685717b001f8d7e73c5d4e7db63237', 'name': 'Raey Abebe', 'email_address': 'raey.abebe@ienetworksolutions.com', 'personable_type': 'User', 'title': 'AI Researcher', 'bio': '', 'location': 'CI-Research & Development ', 'created_at': '2024-07-29T14:44:45.827Z', 'updated_at': '2025-05-22T07:06:47.567Z', 'admin': False, 'owner': False, 'client': False, 'employee': True, 'time_zone': 'America/Los_Angeles', 'avatar_url': 'https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBGmvxAI=--fadd023ab52c4e2375bb102b6b8c3ba499210035/avatar?v=1', 'company': {'id': 1256972, 'name': 'IE Network Solutions'}, 'can_ping': True, 'can_manage_projects': True, 'can_manage_people': True, 'can_access_timesheet': False, 'can_access_hill_charts': True}
+2025-05-28 11:28:13,995 - INFO - Processing person: ID=47810465, Name=Muluken Ashenafi, Email=mulukenashenafi84@outlook.com, SGID=BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0NjU_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--3b00d03392430efc92d0b91039471a689e176faa, Data={'id': 47810465, 'attachable_sgid': 'BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0NjU_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--3b00d03392430efc92d0b91039471a689e176faa', 'name': 'Muluken Ashenafi', 'email_address': 'mulukenashenafi84@outlook.com', 'personable_type': 'User', 'title': 'AI GTP', 'bio': None, 'location': None, 'created_at': '2025-02-28T12:10:06.770Z', 'updated_at': '2025-05-16T22:11:29.304Z', 'admin': False, 'owner': False, 'client': False, 'employee': True, 'time_zone': 'Europe/Moscow', 'avatar_url': 'https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKGH2QI=--af1227dd34f888c17c238d9df169173d6d097c78/avatar?v=1', 'company': {'id': 1256972, 'name': 'IE Network Solutions'}, 'can_ping': True, 'can_manage_projects': True, 'can_manage_people': True, 'can_access_timesheet': False, 'can_access_hill_charts': True}
+2025-05-28 11:28:13,995 - INFO - Processing person: ID=47810466, Name=Telaynew Ambachew, Email=telaynew11@outlook.com, SGID=BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0NjY_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--252c4273143684657ef42d5bfb202b6ca67e5c53, Data={'id': 47810466, 'attachable_sgid': 'BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0NjY_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--252c4273143684657ef42d5bfb202b6ca67e5c53', 'name': 'Telaynew Ambachew', 'email_address': 'telaynew11@outlook.com', 'personable_type': 'User', 'title': 'AI GTP', 'bio': None, 'location': None, 'created_at': '2025-02-28T12:10:07.327Z', 'updated_at': '2025-05-19T09:28:31.024Z', 'admin': False, 'owner': False, 'client': False, 'employee': True, 'time_zone': 'Europe/Moscow', 'avatar_url': 'https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKKH2QI=--ee0e586921d0035a4a09771031f85541bb08eeee/avatar?v=1', 'company': {'id': 1256972, 'name': 'IE Network Solutions'}, 'can_ping': True, 'can_manage_projects': True, 'can_manage_people': True, 'can_access_timesheet': False, 'can_access_hill_charts': True}
+2025-05-28 11:28:13,996 - INFO - Processing person: ID=47810467, Name=Yabsra Fekadu, Email=yabsrafekadu28@outlook.com, SGID=BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0Njc_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--cce8e9c1429e36cb64c2b5349ac55499409e8e72, Data={'id': 47810467, 'attachable_sgid': 'BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0Njc_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--cce8e9c1429e36cb64c2b5349ac55499409e8e72', 'name': 'Yabsra Fekadu', 'email_address': 'yabsrafekadu28@outlook.com', 'personable_type': 'User', 'title': 'AI GTP', 'bio': '', 'location': '', 'created_at': '2025-02-28T12:10:07.946Z', 'updated_at': '2025-05-23T07:28:33.264Z', 'admin': False, 'owner': False, 'client': False, 'employee': True, 'time_zone': 'Europe/Moscow', 'avatar_url': 'https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKOH2QI=--83caa7ef6ce3431cff3f975adc5b982ed4964f25/avatar?v=1', 'company': {'id': 1256972, 'name': 'IE Network Solutions'}, 'can_ping': True, 'can_manage_projects': True, 'can_manage_people': True, 'can_access_timesheet': False, 'can_access_hill_charts': True}
+2025-05-28 11:28:13,997 - INFO - Processing person: ID=47810468, Name=Kidus Girma, Email=kidugirma19@outlook.com, SGID=BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0Njg_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--effc4b04822fb095b9675573e2bbde503a0569e1, Data={'id': 47810468, 'attachable_sgid': 'BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0Njg_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--effc4b04822fb095b9675573e2bbde503a0569e1', 'name': 'Kidus Girma', 'email_address': 'kidugirma19@outlook.com', 'personable_type': 'User', 'title': 'AI GTP', 'bio': None, 'location': None, 'created_at': '2025-02-28T12:10:08.553Z', 'updated_at': '2025-05-17T17:03:08.269Z', 'admin': False, 'owner': False, 'client': False, 'employee': True, 'time_zone': 'Europe/Athens', 'avatar_url': 'https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKSH2QI=--809133130b2c85e5377b3a7ecdd79879c4aeb0a5/avatar?v=1', 'company': {'id': 1256972, 'name': 'IE Network Solutions'}, 'can_ping': True, 'can_manage_projects': True, 'can_manage_people': True, 'can_access_timesheet': False, 'can_access_hill_charts': True}
+2025-05-28 11:28:13,997 - INFO - Processing person: ID=47846157, Name=Teklemariam Shewamnil, Email=teklemariamshewamnil@gmail.com, SGID=BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4NDYxNTc_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--7444c77233840fe631ba467a47725d81fd887fe6, Data={'id': 47846157, 'attachable_sgid': 'BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4NDYxNTc_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--7444c77233840fe631ba467a47725d81fd887fe6', 'name': 'Teklemariam Shewamnil', 'email_address': 'teklemariamshewamnil@gmail.com', 'personable_type': 'User', 'title': 'AI GTP', 'bio': '', 'location': '', 'created_at': '2025-03-05T07:29:01.690Z', 'updated_at': '2025-03-31T08:28:16.612Z', 'admin': False, 'owner': False, 'client': False, 'employee': True, 'time_zone': 'Europe/Moscow', 'avatar_url': 'https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBA0T2gI=--994ffed4e8421bb964f183cabfc86b1fe35b6f03/avatar?v=1', 'company': {'id': 1256972, 'name': 'IE Network Solutions'}, 'can_ping': True, 'can_manage_projects': True, 'can_manage_people': True, 'can_access_timesheet': False, 'can_access_hill_charts': True}
+2025-05-28 11:28:13,998 - INFO - Processing person: ID=47846158, Name=Mikias Abate, Email=mikias.abate12@outlook.com, SGID=BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4NDYxNTg_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--b16a79079bf43abd32f4324c3b7f17cbd95855da, Data={'id': 47846158, 'attachable_sgid': 'BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4NDYxNTg_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--b16a79079bf43abd32f4324c3b7f17cbd95855da', 'name': 'Mikias Abate', 'email_address': 'mikias.abate12@outlook.com', 'personable_type': 'User', 'title': 'AI GTP', 'bio': '', 'location': '', 'created_at': '2025-03-05T07:30:02.193Z', 'updated_at': '2025-05-22T08:39:46.415Z', 'admin': False, 'owner': False, 'client': False, 'employee': True, 'time_zone': 'Europe/Moscow', 'avatar_url': 'https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBA4T2gI=--511469279a6fd9010073b6aaded31a5051980d98/avatar?v=1', 'company': {'id': 1256972, 'name': 'IE Network Solutions'}, 'can_ping': True, 'can_manage_projects': True, 'can_manage_people': True, 'can_access_timesheet': False, 'can_access_hill_charts': True}
+2025-05-28 11:28:13,998 - INFO - Fetched 7 valid people for project 42454826
+2025-05-28 11:28:13,998 - INFO - Valid people: [
+  {
+    "id": 46444393,
+    "name": "Raey Abebe",
+    "email_address": "raey.abebe@ienetworksolutions.com",
+    "sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDY0NDQzOTM_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--d233c20586685717b001f8d7e73c5d4e7db63237",
+    "title": "AI Researcher",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBGmvxAI=--fadd023ab52c4e2375bb102b6b8c3ba499210035/avatar?v=1",
+    "company": "IE Network Solutions"
+  },
+  {
+    "id": 47810465,
+    "name": "Muluken Ashenafi",
+    "email_address": "mulukenashenafi84@outlook.com",
+    "sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0NjU_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--3b00d03392430efc92d0b91039471a689e176faa",
+    "title": "AI GTP",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKGH2QI=--af1227dd34f888c17c238d9df169173d6d097c78/avatar?v=1",
+    "company": "IE Network Solutions"
+  },
+  {
+    "id": 47810466,
+    "name": "Telaynew Ambachew",
+    "email_address": "telaynew11@outlook.com",
+    "sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0NjY_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--252c4273143684657ef42d5bfb202b6ca67e5c53",
+    "title": "AI GTP",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKKH2QI=--ee0e586921d0035a4a09771031f85541bb08eeee/avatar?v=1",
+    "company": "IE Network Solutions"
+  },
+  {
+    "id": 47810467,
+    "name": "Yabsra Fekadu",
+    "email_address": "yabsrafekadu28@outlook.com",
+    "sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0Njc_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--cce8e9c1429e36cb64c2b5349ac55499409e8e72",
+    "title": "AI GTP",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKOH2QI=--83caa7ef6ce3431cff3f975adc5b982ed4964f25/avatar?v=1",
+    "company": "IE Network Solutions"
+  },
+  {
+    "id": 47810468,
+    "name": "Kidus Girma",
+    "email_address": "kidugirma19@outlook.com",
+    "sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4MTA0Njg_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--effc4b04822fb095b9675573e2bbde503a0569e1",
+    "title": "AI GTP",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBKSH2QI=--809133130b2c85e5377b3a7ecdd79879c4aeb0a5/avatar?v=1",
+    "company": "IE Network Solutions"
+  },
+  {
+    "id": 47846157,
+    "name": "Teklemariam Shewamnil",
+    "email_address": "teklemariamshewamnil@gmail.com",
+    "sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4NDYxNTc_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--7444c77233840fe631ba467a47725d81fd887fe6",
+    "title": "AI GTP",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBA0T2gI=--994ffed4e8421bb964f183cabfc86b1fe35b6f03/avatar?v=1",
+    "company": "IE Network Solutions"
+  },
+  {
+    "id": 47846158,
+    "name": "Mikias Abate",
+    "email_address": "mikias.abate12@outlook.com",
+    "sgid": "BAh7BkkiC19yYWlscwY6BkVUewdJIglkYXRhBjsAVEkiKWdpZDovL2JjMy9QZXJzb24vNDc4NDYxNTg_ZXhwaXJlc19pbgY7AFRJIghwdXIGOwBUSSIPYXR0YWNoYWJsZQY7AFQ=--b16a79079bf43abd32f4324c3b7f17cbd95855da",
+    "title": "AI GTP",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/3974505/people/BAhpBA4T2gI=--511469279a6fd9010073b6aaded31a5051980d98/avatar?v=1",
+    "company": "IE Network Solutions"
+  }
+]
+2025-05-28 11:28:14,000 - INFO - Successfully fetched 7 people for project 42454826
+2025-05-28 11:28:14,031 - INFO - Starting daily scheduler automatically at 06:00
+2025-05-28 11:28:14,033 - DEBUG - Deleting *all* jobs
+2025-05-28 11:28:14,035 - INFO - Scheduled daily post at 06:00 EAT (Monday–Friday)
+2025-05-28 11:28:14,115 - DEBUG - Checking for pending scheduled tasks
+2025-05-28 11:28:19,369 - DEBUG - Starting new HTTPS connection (1): 3.basecampapi.com:443
+2025-05-28 11:28:19,704 - DEBUG - https://3.basecampapi.com:443 "GET /3974505/projects.json HTTP/11" 200 2240
+2025-05-28 11:28:19,706 - INFO - Fetched 3 projects for account_id 3974505
+2025-05-28 11:28:19,722 - DEBUG - Starting new HTTPS connection (1): api.quotable.io:443
+2025-05-28 11:28:30,676 - ERROR - Error fetching quote from Quotable: HTTPSConnectionPool(host='api.quotable.io', port=443): Max retries exceeded with url: /random?tags=leadership%7Csuccess%7Cwisdom%7C%7Cdevelopment%7Cresilience%7Cintelligence (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)')))
+2025-05-28 11:28:30,680 - DEBUG - Starting new HTTPS connection (1): api.quotable.io:443
+2025-05-28 11:28:31,285 - ERROR - Error fetching quote from Quotable: HTTPSConnectionPool(host='api.quotable.io', port=443): Max retries exceeded with url: /random?tags=leadership%7Csuccess%7Cwisdom%7C%7Cdevelopment%7Cresilience%7Cintelligence (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)')))
+2025-05-28 11:28:31,287 - DEBUG - Starting new HTTPS connection (1): api.quotable.io:443
+2025-05-28 11:28:41,704 - ERROR - Error fetching quote from Quotable: HTTPSConnectionPool(host='api.quotable.io', port=443): Max retries exceeded with url: /random?tags=leadership%7Csuccess%7Cwisdom%7C%7Cdevelopment%7Cresilience%7Cintelligence (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)')))
+2025-05-28 11:28:41,709 - DEBUG - Starting new HTTPS connection (1): api.quotable.io:443
+2025-05-28 11:28:42,143 - ERROR - Error fetching quote from Quotable: HTTPSConnectionPool(host='api.quotable.io', port=443): Max retries exceeded with url: /random?tags=leadership%7Csuccess%7Cwisdom%7C%7Cdevelopment%7Cresilience%7Cintelligence (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)')))
+2025-05-28 11:28:42,147 - DEBUG - Starting new HTTPS connection (1): api.quotable.io:443
+2025-05-28 11:28:42,758 - ERROR - Error fetching quote from Quotable: HTTPSConnectionPool(host='api.quotable.io', port=443): Max retries exceeded with url: /random?tags=leadership%7Csuccess%7Cwisdom%7C%7Cdevelopment%7Cresilience%7Cintelligence (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1028)')))
+2025-05-28 11:28:42,762 - DEBUG - Starting new HTTPS connection (1): zenquotes.io:443
+2025-05-28 11:28:43,676 - DEBUG - https://zenquotes.io:443 "GET /api/quotes HTTP/11" 200 None
+2025-05-28 11:28:43,877 - INFO - Fetched unique quote from ZenQuotes: Death is not sad; the sad thing is that most people don't really live at all. - Dan Millman
+2025-05-28 11:28:43,878 - DEBUG - Starting new HTTPS connection (1): api.pexels.com:443
+2025-05-28 11:28:44,290 - DEBUG - https://api.pexels.com:443 "GET /v1/search?query=river&per_page=80&orientation=landscape HTTP/11" 200 None
+2025-05-28 11:28:44,305 - DEBUG - Starting new HTTPS connection (1): images.pexels.com:443
+2025-05-28 11:28:44,481 - DEBUG - https://images.pexels.com:443 "GET /photos/612999/pexels-photo-612999.jpeg?auto=compress&cs=tinysrgb&h=650&w=940 HTTP/11" 200 161836
+2025-05-28 11:28:45,808 - DEBUG - STREAM b'IHDR' 16 13
+2025-05-28 11:28:45,809 - DEBUG - STREAM b'iCCP' 41 284
+2025-05-28 11:28:45,809 - DEBUG - iCCP profile name b'ICC Profile'
+2025-05-28 11:28:45,809 - DEBUG - Compression method 0
+2025-05-28 11:28:45,809 - DEBUG - STREAM b'IDAT' 337 65536
+2025-05-28 11:28:45,812 - DEBUG - STREAM b'IHDR' 16 13
+2025-05-28 11:28:45,812 - DEBUG - STREAM b'iCCP' 41 284
+2025-05-28 11:28:45,813 - DEBUG - iCCP profile name b'ICC Profile'
+2025-05-28 11:28:45,813 - DEBUG - Compression method 0
+2025-05-28 11:28:45,813 - DEBUG - STREAM b'IDAT' 337 65536
+2025-05-28 11:28:45,859 - INFO - Generated image with quote: https://images.pexels.com/photos/612999/pexels-photo-612999.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+2025-05-28 11:28:45,862 - INFO - Initialized daily quote image: temp_quote_image_6c38aeb170ae42ffb6caa4496e1ad323.png
+2025-05-28 11:28:45,863 - INFO - Preview generated
+2025-05-28 11:29:14,121 - DEBUG - Checking for pending scheduled tasks
+2025-05-28 11:30:14,121 - DEBUG - Checking for pending scheduled tasks
+2025-05-28 11:31:14,122 - DEBUG - Checking for pending scheduled tasks
