@@ -167,73 +167,15 @@ def load_access_token(session_id: str) -> Optional[Dict]:
         return None
 
 def get_access_token(session_id: str) -> Optional[str]:
-    token_data = load_access_token(session_id)
-    if token_data and token_data.get("access_token"):
-        logging.debug("Using existing access token")
-        return token_data["access_token"]
-    port = find_available_port()
-    AUTH_URL = f"https://launchpad.37signals.com/authorization/new?type=web_server&client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}"
-    class OAuthHandler(http.server.SimpleHTTPRequestHandler):
-        def do_GET(self):
-            try:
-                if self.path.startswith('/oauth/callback'):
-                    params = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
-                    code = params.get('code', [None])[0]
-                    if code:
-                        token_response = requests.post(
-                            "https://launchpad.37signals.com/authorization/token.json",
-                            data={
-                                "type": "web_server",
-                                "client_id": CLIENT_ID,
-                                "client_secret": CLIENT_SECRET,
-                                "redirect_uri": REDIRECT_URI,
-                                "code": code
-                            },
-                            timeout=REQUEST_TIMEOUT
-                        )
-                        if token_response.ok:
-                            token_data = token_response.json()
-                            access_token = token_data.get("access_token")
-                            if access_token:
-                                expiry = datetime.now(timezone.utc) + TOKEN_EXPIRY
-                                save_access_token(access_token, expiry, session_id)
-                                st.session_state.access_token = access_token
-                                self.respond_with("Success! You can close this tab.")
-                            else:
-                                error_msg = token_data.get("error", "No access token")
-                                logging.error(f"Token exchange failed: {error_msg}")
-                                self.respond_with(f"Token exchange failed: {error_msg}")
-                        else:
-                            error_msg = token_response.text
-                            logging.error(f"Token exchange failed: {error_msg}")
-                            self.respond_with(f"Token exchange failed: {error_msg}")
-                    else:
-                        error_msg = params.get('error', ['No code received'])[0]
-                        logging.error(f"OAuth callback error: {error_msg}")
-                        self.respond_with(f"Authentication failed: {error_msg}")
-                else:
-                    logging.error(f"Invalid callback URL: {self.path}")
-                    self.respond_with("Invalid callback URL")
-            except Exception as e:
-                logging.error(f"OAuth handler error: {e}")
-                self.respond_with(f"Authentication error: {e}")
-        def respond_with(self, message):
-            self.send_response(200)
-            self.send_header("Content-type", "text/html")
-            self.end_headers()
-            self.wfile.write(f"<html><body><h1>{message}</h1></body></html>".encode())
-    try:
-        st.info("Opening browser for Basecamp authorization...")
-        logging.info("Initiating OAuth flow")
-        webbrowser.open(AUTH_URL)
-        with socketserver.TCPServer(("localhost", port), OAuthHandler) as httpd:
-            httpd.timeout = 120
-            httpd.handle_request()
-    except Exception as e:
-        logging.error(f"OAuth flow failed: {e}")
-        st.error(f"Authentication failed: {e}. Check your network and try again.")
-        return None
-    return st.session_state.get("access_token")
+    if "BASECAMP_ACCESS_TOKEN" in st.secrets:
+        logging.debug("Using access token from Streamlit secrets")
+        return st.secrets["BASECAMP_ACCESS_TOKEN"]
+    st.warning("Basecamp OAuth not supported in Streamlit Cloud. Please provide an access token manually.")
+    token = st.text_input("Enter Basecamp Access Token", type="password")
+    if token:
+        save_access_token(token, datetime.now(timezone.utc) + TOKEN_EXPIRY, session_id)
+        return token
+    return None
 
 def get_account_info(access_token: str) -> Optional[int]:
     headers = {"Authorization": f"Bearer {access_token}", "User-Agent": USER_AGENT}
@@ -637,13 +579,7 @@ def post_message(account_id: int, project_id: int, message_board_id: int, access
             # Build mentions with project people
             project_people = st.session_state.get('project_people', [])
             if project_people:
-                # Ensure unique mentions by person ID
-                unique_people = {}
-                for person in project_people:
-                    if person.get('id') and person['id'] not in unique_people:
-                        unique_people[person['id']] = person
-                
-                mention_tags = [format_mentions(person) for person in unique_people.values()]
+                mention_tags = [format_mentions(person) for person in project_people]
                 mention_tags = [tag for tag in mention_tags if tag]  # Filter out empty tags
                 final_mentions = f"Selam {' '.join(mention_tags)}," if mention_tags else "Selam Team,"
             else:
@@ -931,27 +867,32 @@ def main():
                                 st.session_state.scheduler_running = True
                                 st.success(f"Daily scheduler started. Posts will occur at {st.session_state.schedule_time} EAT on Monday–Friday.")
                     # Automatic scheduler
-                    if not st.session_state.scheduler_running:
-                        token_data = load_access_token(st.session_state.session_id)
-                        if token_data and st.session_state.schedule_time:
-                            try:
-                                datetime.strptime(st.session_state.schedule_time, "%H:%M")
-                                st.info(f"Scheduler started automatically. Posts will occur daily at {st.session_state.schedule_time} EAT on Monday–Friday.")
-                                logging.info(f"Starting daily scheduler automatically at {st.session_state.schedule_time}")
-                                scheduler_thread = threading.Thread(
+                               # In the main() function, replace the scheduler block with:
+                  if not st.session_state.scheduler_running:
+                       token_data = load_access_token(st.session_state.session_id)
+                       schedule_time = st.session_state.get("schedule_time", "06:00")  # Default fallback
+    
+                      if token_data and schedule_time:
+                          try:
+            # Validate time format
+                               datetime.strptime(schedule_time, "%H:%M")
+                               st.info(f"Scheduler started. Posts at {schedule_time} EAT (Mon–Fri).")
+                               logging.info(f"Scheduler started with token: {token_data['access_token'][:5]}...")
+            
+                               scheduler_thread = threading.Thread(
                                     target=schedule_daily_post,
                                     args=(st.session_state.account_id, project_id, message_board_id, 
-                                          token_data["access_token"], st.session_state.schedule_time)
-                                )
-                                scheduler_thread.daemon = True
-                                scheduler_thread.start()
-                                st.session_state.scheduler_running = True
-                            except ValueError:
-                                st.error("Invalid time format. Please use HH:MM (24-hour format).")
-                                logging.error("Invalid time format for scheduler")
-                        else:
-                            st.error("No valid access token or schedule time. Re-authenticate or set a valid time.")
-                            logging.error("No valid access token or schedule time for scheduler")
+                                          token_data["access_token"], schedule_time),
+                                    daemon=True
+            )
+                               scheduler_thread.start()
+                               st.session_state.scheduler_running = True
+                            except ValueError as e:
+                               st.error(f"Invalid time format: {schedule_time}. Use HH:MM (24-hour).")
+                               logging.error(f"Invalid schedule time: {e}")
+                   else:
+                        st.error("No valid token or schedule time. Re-authenticate or set time.")
+                        logging.error("Scheduler failed: Missing token or time")
             else:
                 st.warning("No projects with message boards found. Ensure you have access to projects with message boards enabled.")
                 logging.warning("No projects with message boards found")
