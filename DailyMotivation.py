@@ -868,7 +868,7 @@ def main():
                                 st.success(f"Daily scheduler started. Posts will occur at {st.session_state.schedule_time} EAT on Monday–Friday.")
                     # Automatic scheduler
                                # In the main() function, replace the scheduler block with:
-                  if not st.session_state.scheduler_running:
+                    if not st.session_state.scheduler_running:
                        token_data = load_access_token(st.session_state.session_id)
                        schedule_time = st.session_state.get("schedule_time", "06:00")  # Default fallback
     
