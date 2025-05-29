@@ -872,7 +872,7 @@ def main():
                        token_data = load_access_token(st.session_state.session_id)
                        schedule_time = st.session_state.get("schedule_time", "06:00")  # Default fallback
     
-                      if token_data and schedule_time:
+                    if token_data and schedule_time:
                           try:
             # Validate time format
                                datetime.strptime(schedule_time, "%H:%M")
