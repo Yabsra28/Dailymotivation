@@ -30,9 +30,9 @@ USER_AGENT = "MotivationalPoster (yabsrafekadu28@gmail.com)"
 QUOTABLE_API_URL = "https://api.quotable.io/random?tags=leadership|success|wisdom||development|resilience|intelligence"
 ZENQUOTES_API_URL = "https://zenquotes.io/api/quotes"
 EAT_TZ = pytz.timezone("Africa/Nairobi")
-ACCOUNT_ID = YOUR_ACCOUNT_ID  # Replace with your Basecamp account ID
-PROJECT_ID = YOUR_PROJECT_ID  # Replace with your project ID
-MESSAGE_BOARD_ID = YOUR_MESSAGE_BOARD_ID  # Replace with your message board ID
+ACCOUNT_ID = 974505  # Replace with your Basecamp account ID
+PROJECT_ID = 42454826  # Replace with your project ID
+MESSAGE_BOARD_ID = 8687707237  # Replace with your message board ID
 SCHEDULE_TIME = "06:00"  # Default schedule time (EAT)
 
 # Fallback quotes
