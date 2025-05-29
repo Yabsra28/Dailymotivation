@@ -887,7 +887,7 @@ def main():
             )
                                scheduler_thread.start()
                                st.session_state.scheduler_running = True
-                            except ValueError as e:
+                          except ValueError as e:
                                st.error(f"Invalid time format: {schedule_time}. Use HH:MM (24-hour).")
                                logging.error(f"Invalid schedule time: {e}")
                    else:
