@@ -867,32 +867,27 @@ def main():
                                 st.session_state.scheduler_running = True
                                 st.success(f"Daily scheduler started. Posts will occur at {st.session_state.schedule_time} EAT on Monday–Friday.")
                     # Automatic scheduler
-                               # In the main() function, replace the scheduler block with:
                     if not st.session_state.scheduler_running:
-                       token_data = load_access_token(st.session_state.session_id)
-                       schedule_time = st.session_state.get("schedule_time", "06:00")  # Default fallback
-    
-                    if token_data and schedule_time:
-                          try:
-            # Validate time format
-                               datetime.strptime(schedule_time, "%H:%M")
-                               st.info(f"Scheduler started. Posts at {schedule_time} EAT (Mon–Fri).")
-                               logging.info(f"Scheduler started with token: {token_data['access_token'][:5]}...")
-            
-                               scheduler_thread = threading.Thread(
+                        token_data = load_access_token(st.session_state.session_id)
+                        if token_data and st.session_state.schedule_time:
+                            try:
+                                datetime.strptime(st.session_state.schedule_time, "%H:%M")
+                                st.info(f"Scheduler started automatically. Posts will occur daily at {st.session_state.schedule_time} EAT on Monday–Friday.")
+                                logging.info(f"Starting daily scheduler automatically at {st.session_state.schedule_time}")
+                                scheduler_thread = threading.Thread(
                                     target=schedule_daily_post,
                                     args=(st.session_state.account_id, project_id, message_board_id, 
-                                          token_data["access_token"], schedule_time),
-                                    daemon=True
-            )
-                               scheduler_thread.start()
-                               st.session_state.scheduler_running = True
-                          except ValueError as e:
-                               st.error(f"Invalid time format: {schedule_time}. Use HH:MM (24-hour).")
-                               logging.error(f"Invalid schedule time: {e}")
-                   else:
-                        st.error("No valid token or schedule time. Re-authenticate or set time.")
-                        logging.error("Scheduler failed: Missing token or time")
+                                          token_data["access_token"], st.session_state.schedule_time)
+                                )
+                                scheduler_thread.daemon = True
+                                scheduler_thread.start()
+                                st.session_state.scheduler_running = True
+                            except ValueError:
+                                st.error("Invalid time format. Please use HH:MM (24-hour format).")
+                                logging.error("Invalid time format for scheduler")
+                        else:
+                            st.error("No valid access token or schedule time. Re-authenticate or set a valid time.")
+                            logging.error("No valid access token or schedule time for scheduler")
             else:
                 st.warning("No projects with message boards found. Ensure you have access to projects with message boards enabled.")
                 logging.warning("No projects with message boards found")
